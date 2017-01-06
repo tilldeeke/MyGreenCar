@@ -84,7 +84,7 @@
 	<script>
 		$(document).ready(function() {
 
-			showOnly('menu');
+			showOnly('dashboard');
 
 			hide('indicator-long');
 			hide('indicator-short');
@@ -115,9 +115,22 @@
 		</ul>
 	</section>
 	<section id="login" class="screen">
-		<input type="email"><br>
-		<input type="password"><br>
-		<button id="submit-login" onclick="showOnly('dashboard')">Login</button>
+		<div class="grid">
+			<div class="grid_item" style="padding : 25px 0 0 25px">
+				<label for="email">Email:</label><br>
+				<input type="email"><br>
+				<label for="password">Passwort:</label><br>
+				<input type="password"><br>
+				<button id="submit-login" onclick="showOnly('dashboard')">Login</button>
+				<p>
+					<a href="#">Registrieren</a><br>
+					<a href="#">Passwort vergessen</a>
+				</p>
+			</div>
+			<div class="grid_item" style="text-align : center">
+				[logo]
+			</div>
+		</div>
 	</section>
 	<section id="dashboard" class="screen">
 		<div class="grid">
@@ -353,28 +366,28 @@
 	</section>
 	
 	<section id="achivements" class="screen">Achievements
-	Abgasvermeider  Level 4 <br>
-	20 Tonnen CO2 eingespart <br>
-	<progress value="20" max="100">
-	</progress>
-	<br><br>
-	Baumkuschler  Level 2 <br>
-	26 Bäume gerettet <br>
-	<progress value="80" max="100">
-	</progress>
-	<br><br>
-	Gemeinsam stark  Level 6 <br>
-	200 Gruppenfahrten <br>
-	<progress value="45" max="100">
-	</progress>
-	<br><br>
-	Tierfreund  Level 10 <br>
-	33 süße Kätzchen gerettet <br>
-	<progress value="95" max="100">
-	</progress>
-	<br><br>
-	
-	
+		Abgasvermeider  Level 4 <br>
+		20 Tonnen CO2 eingespart <br>
+		<progress value="20" max="100">
+		</progress>
+		<br><br>
+		Baumkuschler  Level 2 <br>
+		26 Bäume gerettet <br>
+		<progress value="80" max="100">
+		</progress>
+		<br><br>
+		Gemeinsam stark  Level 6 <br>
+		200 Gruppenfahrten <br>
+		<progress value="45" max="100">
+		</progress>
+		<br><br>
+		Tierfreund  Level 10 <br>
+		33 süße Kätzchen gerettet <br>
+		<progress value="95" max="100">
+		</progress>
+		<br><br>
+
+
 	</section>
 
 	<h1>GUI</h1>
