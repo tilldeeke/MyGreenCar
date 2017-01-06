@@ -85,11 +85,23 @@
 			cursor: pointer;
 
 		}
+
+		.booking-confirmation {
+			padding : 10px;
+			margin : 20px;
+			border : 1px solid #ccc;
+			position : relative;
+		}
+		.booking-confirmation_edit {
+			position: absolute;
+			top : 10px;
+			right : 10px;
+		}
 	</style>
 	<script>
 		$(document).ready(function() {
 
-			showOnly('login');
+			showOnly('booking-step-4');
 
 			hide('indicator-long');
 			hide('indicator-short');
@@ -336,16 +348,16 @@
 		<div class="booking-confirmation">
 			<button class="booking-confirmation_edit" onclick="showOnly('booking-step-1')">edit</button>
 			Hinfahrt: Standort -> Eingabe <br>
-			##datum## ab ##uhrzeit## <br>
-			##typ## <br>
-			Preis: ##preis##€ <br>
+			XXXX ab XXXX <br>
+			Gruppenfahrt <br>
+			Preis: 12,50€ <br>
 		</div>
 		<div class="booking-confirmation">
-			<button  onclick="showOnly('booking-step-2')">edit</button>
+			<button class="booking-confirmation_edit" onclick="showOnly('booking-step-2')">edit</button>
 			Rückfahrt
 		</div>		
 		<button onclick="showOnly('booking-step-3')">Zurück</button>		
-		<button onclick="showOnly('dashboard')">Bestätigen</button>
+		<button onclick="alert('Vielen Dank für Ihre Bestellung!');showOnly('dashboard')">Bestätigen</button>
 	</section>
 	<section id="profile" class="screen">
 		<ul class="tabs">
@@ -370,6 +382,7 @@
 		Externe Anzeige <br>
 	</section>
 	
+<<<<<<< HEAD
 	<section id="achivements" class="screen">Achievements
 
 	Abgasvermeider  Level 4 <br>
@@ -413,6 +426,47 @@
 	<br><br>
 
 
+=======
+	<section id="achivements" class="screen">Achievements<br>
+	<br>
+	<div class="grid">
+			<div class="grid_item">
+				Abgasvermeider  Level 4 <br>
+				20 Tonnen CO2 eingespart <br>
+				<i class="fa fa-free-code-camp" aria-hidden="true"></i> <br>
+				<progress value="20" max="100">
+				</progress>
+				<br>
+			</div>
+			<div class="grid_item">
+				Baumkuschler  Level 2 <br>
+				26 Bäume gerettet <br>
+				<i class="fa fa-tree" aria-hidden="true"></i> <br>
+				<progress value="80" max="100">
+				</progress>
+				<br>
+			</div>
+		</div>
+		<br>
+		<div class="grid">
+			<div class="grid_item">
+				Gemeinsam stark  Level 6 <br>
+				200 Gruppenfahrten <br>
+				<i class="fa fa-users" aria-hidden="true"></i> <br>
+				<progress value="45" max="100">
+				</progress>
+				<br>
+			</div>
+			<div class="grid_item">
+				Tierfreund  Level 10 <br>
+				33 süße Kätzchen gerettet <br>
+				<i class="fa fa-github-alt" aria-hidden="true" style="text-align: center"></i> <br>
+				<progress value="95" max="100">
+				</progress>
+				<br>
+			</div>
+		</div>
+>>>>>>> origin/master
 	</section>
 
 	<h1>GUI</h1>
