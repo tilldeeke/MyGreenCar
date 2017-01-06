@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8" /> 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script type="text/javascript" src="gui.js"></script>
 	<style>
@@ -27,7 +28,7 @@
 	<script>
 		$(document).ready(function() {
 
-			showOnly('booking-step-1');
+			showOnly('booking-step-4');
 
 		});
 		
@@ -99,11 +100,6 @@
 		<input type="checkbox" id="rueckfahrt">
 
 		<br>
-
-
-
-
-		<br>
 		<button onclick="showOnly('booking-step-2')">Weiter</button>
 	</section>
 	<section id="booking-step-2" class="screen">
@@ -126,7 +122,37 @@
 		</ul>
 		booking-3
 		<br>
-		<button onclick="showOnly('booking-step-4')">Weiter</button>
+		<div class="booking-option" style="overflow:hidden">
+			<div class="booking-option_text" style="float: left">
+				Ab: XXXX <br>
+				An: XXXX <br>
+				Dauer: XXXX
+			</div>
+			<div class="booking-option_type" style="float: left">
+				Gruppenfahrt
+			</div>
+			<div class="booking-option_action" style="float: left" onclick="showOnly('booking-step-4')">
+				12,50€ <br>
+				Bestellen!
+			</div>
+		</div>
+		<div class="booking-option" style="overflow:hidden">
+			<div class="booking-option_text" style="float: left">
+				Ab: XXXX <br>
+				An: XXXX <br>
+				Dauer: XXXX
+			</div>
+			<div class="booking-option_type" style="float: left">
+				Gruppenfahrt
+			</div>
+			<div class="booking-option_action" style="float: left" onclick="showOnly('booking-step-4')">
+				12,50€ <br>
+				Bestellen!
+			</div>
+		</div>
+
+		<br>
+		<button onclick="showOnly('booking-step-2')">Zurück</button>
 	</section>
 	<section id="booking-step-4" class="screen">
 		<ul class="tabs">
@@ -137,6 +163,19 @@
 		</ul>
 		booking-4
 		<br>
+		<div class="booking-confirmation">
+			Hinfahrt: Standort -> Eingabe <br>
+			##datum## ab ##uhrzeit## <br>
+			##typ## <br>
+			Preis: ##preis##€ <br>
+		</div>
+		<div class="booking-confirmation">
+			Hinfahrt: Standort -> Eingabe <br>
+			##datum## ab ##uhrzeit## <br>
+			##typ## <br>
+			Preis: ##preis##€ <br>
+		</div>		
+		<button onclick="showOnly('booking-step-3')">Zurück</button>		
 		<button onclick="showOnly('dashboard')">Bestätigen</button>
 	</section>
 	<section id="profile" class="screen">Profile</section>
