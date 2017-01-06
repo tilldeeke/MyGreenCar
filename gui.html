@@ -103,11 +103,20 @@
 			margin : 20px;
 			border : 1px solid #ccc;
 		}
+		#favorites table, #routines table {
+			border-collapse: collapse;
+		}
+		#favorites td, #routines td {
+			padding : 5px;
+		}		
+		#favorites tbody td, #routines tbody td {
+			border : 1px solid #aaa;
+		}
 	</style>
 	<script>
 		$(document).ready(function() {
 
-			showOnly('booking-step-3');
+			showOnly('favorites');
 
 			hide('indicator-long');
 			hide('indicator-short');
@@ -181,7 +190,7 @@
 		</ul>
 		<br>
 		<button>+</button>
-		<div style="overflow-y:scroll">
+		<div style="overflow-y:scroll;overflow-x:hidden">
 			<table style="width:100%">
 				<thead>
 					<tr>
@@ -208,7 +217,7 @@
 		</ul>
 		<br>
 		<button>+</button>
-		<div style="overflow-y:scroll">
+		<div style="overflow-y:scroll;overflow-x:hidden">
 			<table style="width:100%">
 				<thead>
 					<tr>
