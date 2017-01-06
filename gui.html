@@ -65,10 +65,10 @@
 			width : 100%;
 			height : 100%;
 		}
-<<<<<<< HEAD
+
 		#dashboard .fa {
 			font-size : xx-large;
-=======
+		}
 
 
 		.menu {
@@ -83,11 +83,13 @@
 			border-bottom : 1px solid #ccc; 
 			padding : 20px;
 			cursor: pointer;
->>>>>>> origin/master
+
 		}
 	</style>
 	<script>
 		$(document).ready(function() {
+
+			showOnly('dashboard');
 
 			hide('indicator-long');
 			hide('indicator-short');
@@ -118,9 +120,22 @@
 		</ul>
 	</section>
 	<section id="login" class="screen">
-		<input type="email"><br>
-		<input type="password"><br>
-		<button id="submit-login" onclick="showOnly('dashboard')">Login</button>
+		<div class="grid">
+			<div class="grid_item" style="padding : 25px 0 0 25px">
+				<label for="email">Email:</label><br>
+				<input type="email"><br>
+				<label for="password">Passwort:</label><br>
+				<input type="password"><br>
+				<button id="submit-login" onclick="showOnly('dashboard')">Login</button>
+				<p>
+					<a href="#">Registrieren</a><br>
+					<a href="#">Passwort vergessen</a>
+				</p>
+			</div>
+			<div class="grid_item" style="text-align : center">
+				[logo]
+			</div>
+		</div>
 	</section>
 	<section id="dashboard" class="screen">
 		<div class="grid">
@@ -355,6 +370,7 @@
 	</section>
 	
 	<section id="achivements" class="screen">Achievements
+
 	Abgasvermeider  Level 4 <br>
 	20 Tonnen CO2 eingespart <br>
 	<i class="fa fa-free-code-camp" aria-hidden="true"></i> <br>
@@ -379,8 +395,8 @@
 	<progress value="95" max="100">
 	</progress>
 	<br><br>
-	
-	
+
+
 	</section>
 
 	<h1>GUI</h1>
