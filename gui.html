@@ -28,7 +28,7 @@
 	<script>
 		$(document).ready(function() {
 
-			showOnly('booking-step-4');
+			showOnly('favorites');
 
 		});
 		
@@ -56,9 +56,82 @@
 		<button onclick="showOnly('profile')">Profil</button>
 		<button onclick="showOnly('achivements')">Achievements</button>
 	</section>
-	<section id="favorites" class="screen">
-		
+	<section id="routines" class="screen">
+		<ul class="tabs">
+			<li class="active" onclick="showOnly('routines')">Routinen</li>
+			<li onclick="showOnly('favorites')">Favoriten</li>
+		</ul>
+		<br>
+		<button>+</button>
+		<div style="overflow-y:scroll">
+			<table style="width:100%">
+				<thead>
+					<tr>
+						<td></td>
+						<td style="text-align:right">Alle</td>
+						<td><input type="checkbox"></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Oma</td>
+						<td>Mo, Di, Mi, Do,  Fr, Sa, So</td>
+						<td><input type="checkbox"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<button>Löschen</button>		
 	</section>
+	<section id="favorites" class="screen">
+		<ul class="tabs">
+			<li onclick="showOnly('routines')">Routinen</li>
+			<li class="active" onclick="showOnly('favorites')">Favoriten</li>
+		</ul>
+		<br>
+		<button>+</button>
+		<div style="overflow-y:scroll">
+			<table style="width:100%">
+				<thead>
+					<tr>
+						<td style="text-align:right">Alle</td>
+						<td><input type="checkbox"></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Oma</td>
+						<td><input type="checkbox"></td>
+					</tr>
+					<tr>
+						<td>Oma</td>
+						<td><input type="checkbox"></td>
+					</tr>
+					<tr>
+						<td>Oma</td>
+						<td><input type="checkbox"></td>
+					</tr>
+					<tr>
+						<td>Oma</td>
+						<td><input type="checkbox"></td>
+					</tr>
+					<tr>
+						<td>Oma</td>
+						<td><input type="checkbox"></td>
+					</tr>
+					<tr>
+						<td>Oma</td>
+						<td><input type="checkbox"></td>
+					</tr>
+					<tr>
+						<td>Oma</td>
+						<td><input type="checkbox"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<button>Löschen</button>
+	</section>	
 	<section id="booking-step-1" class="screen">
 		<ul class="tabs">
 			<li class="active" onclick="showOnly('booking-step-1')">Hinfahrt</li>
