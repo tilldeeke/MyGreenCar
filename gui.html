@@ -44,11 +44,28 @@
 		#car-indicator {
 			text-align : center;
 		}
+
+
+		.grid {
+			display: flex;
+		}
+		.grid_item {
+			flex: 1;
+		}
+
+		#dashboard .grid_item {
+			height: 200px;
+			border : 1px solid red;
+		}
+		#dashboard .grid_item button {
+			width : 100%;
+			height : 100%;
+		}
 	</style>
 	<script>
 		$(document).ready(function() {
 
-			showOnly('favorites');
+			showOnly('dashboard');
 
 			hide('indicator-long');
 			hide('indicator-short');
@@ -84,10 +101,23 @@
 		<button id="submit-login" onclick="showOnly('dashboard')">Login</button>
 	</section>
 	<section id="dashboard" class="screen">
-		<button onclick="showOnly('booking-step-1')">Buchen</button>
-		<button onclick="showOnly('favorites')">Favoriten</button>
-		<button onclick="showOnly('profile')">Profil</button>
-		<button onclick="showOnly('achivements')">Achievements</button>
+		<div class="grid">
+			<div class="grid_item">
+				<button onclick="showOnly('booking-step-1')">Buchen</button>
+			</div>
+			<div class="grid_item">
+				<button onclick="showOnly('favorites')">Favoriten</button>
+			</div>
+		</div>
+		<div class="grid">
+			<div class="grid_item">
+				<button onclick="showOnly('profile')">Profil</button>
+			</div>
+			<div class="grid_item">
+				<button onclick="showOnly('achivements')">Achievements</button>
+			</div>
+		</div>
+		
 	</section>
 	<section id="routines" class="screen">
 		<ul class="tabs">
@@ -281,26 +311,26 @@
 		<button onclick="showOnly('dashboard')">Bestätigen</button>
 	</section>
 	<section id="profile" class="screen">
-			<ul class="tabs">
+		<ul class="tabs">
 			<li class="active" onclick="showOnly('profile')">Profil</li>
 			<li onclick="showOnly('settings')">Einstellungen</li>
 		</ul>
-	<br>Peter Schmidt <br>
-	Kontoeinstellungen <br>
-	Benachrichtigungen <br>
-	Bezahhloptionen <br>
-	Hilfe <br>
-	
+		<br>Peter Schmidt <br>
+		Kontoeinstellungen <br>
+		Benachrichtigungen <br>
+		Bezahhloptionen <br>
+		Hilfe <br>
+
 	</section>
 	<section id="settings" class="screen">
-			<ul class="tabs">
+		<ul class="tabs">
 			<li onclick="showOnly('profile')">Profil</li>
 			<li class="active" onclick="showOnly('settings')">Einstellungen</li>
 		</ul>
-	<br>Gesperrte Nutzer <br>
-	Sprache <br>
-	Design <br>
-	Externe Anzeige <br>
+		<br>Gesperrte Nutzer <br>
+		Sprache <br>
+		Design <br>
+		Externe Anzeige <br>
 	</section>
 	
 	<section id="achivements" class="screen">Achievements
