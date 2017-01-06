@@ -131,10 +131,10 @@
 			<div class="booking-option_type" style="float: left">
 				Gruppenfahrt
 			</div>
-			<div class="booking-option_action" style="float: left" onclick="showOnly('booking-step-4')">
+			<button class="booking-option_action" style="float: left" onclick="showOnly('booking-step-4')">
 				12,50€ <br>
 				Bestellen!
-			</div>
+			</button>
 		</div>
 		<div class="booking-option" style="overflow:hidden">
 			<div class="booking-option_text" style="float: left">
@@ -145,10 +145,10 @@
 			<div class="booking-option_type" style="float: left">
 				Gruppenfahrt
 			</div>
-			<div class="booking-option_action" style="float: left" onclick="showOnly('booking-step-4')">
+			<button class="booking-option_action" style="float: left" onclick="showOnly('booking-step-4')">
 				12,50€ <br>
 				Bestellen!
-			</div>
+			</button>
 		</div>
 
 		<br>
@@ -164,16 +164,15 @@
 		booking-4
 		<br>
 		<div class="booking-confirmation">
+			<button class="booking-confirmation_edit" onclick="showOnly('booking-step-1')">edit</button>
 			Hinfahrt: Standort -> Eingabe <br>
 			##datum## ab ##uhrzeit## <br>
 			##typ## <br>
 			Preis: ##preis##€ <br>
 		</div>
 		<div class="booking-confirmation">
-			Hinfahrt: Standort -> Eingabe <br>
-			##datum## ab ##uhrzeit## <br>
-			##typ## <br>
-			Preis: ##preis##€ <br>
+			<button  onclick="showOnly('booking-step-2')">edit</button>
+			Rückfahrt
 		</div>		
 		<button onclick="showOnly('booking-step-3')">Zurück</button>		
 		<button onclick="showOnly('dashboard')">Bestätigen</button>
