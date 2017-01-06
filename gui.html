@@ -97,11 +97,17 @@
 			top : 10px;
 			right : 10px;
 		}
+
+		.booking-option {
+			padding : 10px;
+			margin : 20px;
+			border : 1px solid #ccc;
+		}
 	</style>
 	<script>
 		$(document).ready(function() {
 
-			showOnly('booking-step-4');
+			showOnly('booking-step-3');
 
 			hide('indicator-long');
 			hide('indicator-short');
@@ -305,30 +311,30 @@
 			<li onclick="showOnly('booking-step-4')">Bestätigung</li>
 		</ul>
 		<br>
-		<div class="booking-option" style="overflow:hidden">
-			<div class="booking-option_text" style="float: left">
+		<div class="booking-option grid">
+			<div class="booking-option_text grid_item">
 				Ab: XXXX <br>
 				An: XXXX <br>
 				Dauer: XXXX
 			</div>
-			<div class="booking-option_type" style="float: left">
+			<div class="booking-option_type grid_item">
 				Gruppenfahrt
 			</div>
-			<button class="booking-option_action" style="float: left" onclick="showOnly('booking-step-4')">
+			<button class="booking-option_action grid_item" onclick="showOnly('booking-step-4')">
 				12,50€ <br>
 				Bestellen!
 			</button>
 		</div>
-		<div class="booking-option" style="overflow:hidden">
-			<div class="booking-option_text" style="float: left">
+		<div class="booking-option grid">
+			<div class="booking-option_text grid_item">
 				Ab: XXXX <br>
 				An: XXXX <br>
 				Dauer: XXXX
 			</div>
-			<div class="booking-option_type" style="float: left">
+			<div class="booking-option_type grid_item">
 				Gruppenfahrt
 			</div>
-			<button class="booking-option_action" style="float: left" onclick="showOnly('booking-step-4')">
+			<button class="booking-option_action grid_item" onclick="showOnly('booking-step-4')">
 				12,50€ <br>
 				Bestellen!
 			</button>
