@@ -1,16 +1,153 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="gui.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="gui.js"></script>
+	<style>
+		.screen {
+			width:800px;
+			height:600px;
+			border: 1px solid blue;
+		}
+		ul.tabs {
+			display : block;
+			overflow: hidden;
+		}
+		ul.tabs > li {
+			display : block;
+			float : left;
+			background : grey;
+			padding : 10px;
+			margin : 5px;
+		}
+		ul.tabs > li.active {
+			background : green;
+		}
+	</style>
+	<script>
+		$(document).ready(function() {
+
+			showOnly('booking-step-1');
+
+		});
+		
+	</script>
 </head>
 <body>
+	<button onclick="showOnly('menu')">Menu</button>
+	<section id="menu" class="screen">
+		<ul>
+			<li onclick="showOnly('dashboard')">Dashboard</li>
+			<li onclick="showOnly('booking-step-1')">Buchen</li>
+			<li onclick="showOnly('favorites')">Faforiten</li>
+			<li onclick="showOnly('profile')">Profil</li>
+			<li onclick="showOnly('achivements')">Achivments</li>
+		</ul>
+	</section>
+	<section id="login" class="screen">
+		<input type="email"><br>
+		<input type="password"><br>
+		<button id="submit-login" onclick="showOnly('dashboard')">Login</button>
+	</section>
+	<section id="dashboard" class="screen">
+		<button onclick="showOnly('booking-step-1')">buchen</button>
+		<button onclick="showOnly('favorites')">favouriten</button>
+		<button onclick="showOnly('profile')">profil</button>
+		<button onclick="showOnly('achivements')">achivments</button>
+	</section>
+	<section id="favorites" class="screen">
+		
+	</section>
+	<section id="booking-step-1" class="screen">
+		<ul class="tabs">
+			<li class="active" onclick="showOnly('booking-step-1')">Hinfahrt</li>
+			<li onclick="showOnly('booking-step-2')">Rückfahrt</li>
+			<li onclick="showOnly('booking-step-3')">Auswahl</li>
+			<li onclick="showOnly('booking-step-4')">Bestätigung</li>
+		</ul>
+		booking-1
+		<br>
+		
+		<label for="from">Von:</label>
+		<input type="text" id="from">
+		<br>
 
-<h1>GUI</h1>
+		<label for="to">Nach:</label>
+		<input type="text" id="to">
+		<br>
+		<label for="date">datum:</label>
+		<input type="date" id="datum">
+		<br>
+		<label for="time">time:</label>
+		<input type="time" id="time">
+		<br>
+		<fieldset>
+			<legend>ab ab:</legend>
+			<label for="ab">ab</label>
+			<input type="radio" name="aban" id="ab" value="ab" checked><br>
+			<label for="an">an</label>
+			<input type="radio" name="aban" id="an" value="an"><br>
+		</fieldset>
+		<fieldset>
+			<legend>personen:</legend>
+			<button>+</button>
+			<input type="number" value="1">
+			<button>-</button>
+		</fieldset>		
+		<br>
+		<label for="rueckfahrt">ruckfahrt:</label>
+		<input type="checkbox" id="rueckfahrt">
 
-<div id="counter"></div>
-<div id="mytext"></div>
+		<br>
 
-<img src="cat.jpg" width="300" id="animal" />
+
+
+
+		<br>
+		<button onclick="showOnly('booking-step-2')">Weiter</button>
+	</section>
+	<section id="booking-step-2" class="screen">
+		<ul class="tabs">
+			<li onclick="showOnly('booking-step-1')">Hinfahrt</li>
+			<li  class="active" onclick="showOnly('booking-step-2')">Rückfahrt</li>
+			<li onclick="showOnly('booking-step-3')">Auswahl</li>
+			<li onclick="showOnly('booking-step-4')">Bestätigung</li>
+		</ul>
+		booking-2
+		<br>
+		<button onclick="showOnly('booking-step-3')">Weiter</button>
+	</section>
+	<section id="booking-step-3" class="screen">
+		<ul class="tabs">
+			<li onclick="showOnly('booking-step-1')">Hinfahrt</li>
+			<li onclick="showOnly('booking-step-2')">Rückfahrt</li>
+			<li class="active" onclick="showOnly('booking-step-3')">Auswahl</li>
+			<li onclick="showOnly('booking-step-4')">Bestätigung</li>
+		</ul>
+		booking-3
+		<br>
+		<button onclick="showOnly('booking-step-4')">Weiter</button>
+	</section>
+	<section id="booking-step-4" class="screen">
+		<ul class="tabs">
+			<li onclick="showOnly('booking-step-1')">Hinfahrt</li>
+			<li onclick="showOnly('booking-step-2')">Rückfahrt</li>
+			<li onclick="showOnly('booking-step-3')">Auswahl</li>
+			<li  class="active" onclick="showOnly('booking-step-4')">Bestätigung</li>
+		</ul>
+		booking-4
+		<br>
+		<button onclick="showOnly('dashboard')">Bestätigen</button>
+	</section>
+	<section id="profile" class="screen">profile</section>
+	<section id="achivements" class="screen">achivevḿents</section>
+
+	<h1>GUI</h1>
+
+	<div id="counter"></div>
+	<div id="mytext"></div>
+
+	<img src="cat.jpg" width="300" id="animal" />
 
 </body>
 </html>

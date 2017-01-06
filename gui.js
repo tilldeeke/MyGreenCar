@@ -60,7 +60,7 @@ function update() {
 }
 
 // request updates with a fixed interval (ms)
-var intervalID = setInterval(update, 200);
+var intervalID = setInterval(update, 20000);
 
 ///////////////////////////////////////////////////////////////////////////////
 // your code below
@@ -92,8 +92,22 @@ function showCounter(response) {
 }
 
 function updateText(response) {
-	document.getElementById("mytext").innerHTML = response.value;
+	document.getElementsById("mytext").innerHTML = response.value;
 }
 
 
 
+
+function hideAll() {
+	$('.screen').hide();
+}
+function showOnly(screen) {
+	hideAll();
+	show(screen);
+}
+function hide(screen) {
+	document.getElementById(screen).style.display = 'none';
+}
+function show(screen) {
+	document.getElementById(screen).style.display = 'block';
+}
