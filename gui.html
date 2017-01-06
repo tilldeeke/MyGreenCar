@@ -89,7 +89,7 @@
 	<script>
 		$(document).ready(function() {
 
-			showOnly('dashboard');
+			showOnly('login');
 
 			hide('indicator-long');
 			hide('indicator-short');
@@ -111,7 +111,7 @@
 		<div id="date-time" class="top-bar_item">15:00 Uhr &ndash; 10.10.2017</div>
 	</div>
 	<section id="menu" class="screen">
-
+		<ul class="menu">
 			<li onclick="showOnly('dashboard')">Dashboard</li>
 			<li onclick="showOnly('booking-step-1')">Buchen</li>
 			<li onclick="showOnly('favorites')">Favoriten</li>
@@ -133,7 +133,7 @@
 				</p>
 			</div>
 			<div class="grid_item" style="text-align : center">
-				[logo]
+				<i class="fa fa-car" style="font-size: 180px;margin-top : 50px;margin-right: 50px;color :green"></i>
 			</div>
 		</div>
 	</section>
@@ -345,6 +345,7 @@
 			Rückfahrt
 		</div>		
 		<button onclick="showOnly('booking-step-3')">Zurück</button>		
+		<button onclick="showOnly('dashboard')">Bestätigen</button>
 	</section>
 	<section id="profile" class="screen">
 		<ul class="tabs">
