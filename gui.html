@@ -24,18 +24,51 @@
 		ul.tabs > li.active {
 			background : green;
 		}
+
+		#top-bar {
+			display: flex;
+			width : 800px;
+			border: 1px solid blue;
+			border-bottom-width: 0;
+		}
+		.top-bar_item {
+			flex: 1;
+			border-right: 1px solid blue;		
+		}
+		.top-bar_item:last-child {
+			border-right-width: 0;
+		}
+		#menu-btn {
+			padding : 10px;
+		}
+		#car-indicator {
+			text-align : center;
+		}
 	</style>
 	<script>
 		$(document).ready(function() {
 
 			showOnly('favorites');
 
+			hide('indicator-long');
+			hide('indicator-short');
+			show('indicator-arrived');
 		});
 		
 	</script>
 </head>
 <body>
-	<button onclick="showOnly('menu')">Menü</button>
+	<div id="top-bar">
+		<div class="top-bar_item">
+			<button id="menu-btn" onclick="showOnly('menu')">Menü</button>	
+		</div>
+		<div id="car-indicator" class="top-bar_item">
+			<div id="indicator-long">~ 10 Minuten</div>
+			<div id="indicator-short">< 3 Minuten</div>
+			<div id="indicator-arrived">Ihr Auto ist da!</div>
+		</div>	
+		<div id="date-time" class="top-bar_item">15:00 Uhr &ndash; 10.10.2017</div>
+	</div>
 	<section id="menu" class="screen">
 		<ul>
 			<li onclick="showOnly('dashboard')">Dashboard</li>
