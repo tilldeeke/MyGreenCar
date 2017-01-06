@@ -117,7 +117,7 @@
 	<script>
 		$(document).ready(function() {
 
-			showOnly('favorites');
+			showOnly('booking-step-1');
 
 			hide('indicator-long');
 			hide('indicator-short');
@@ -267,41 +267,57 @@
 			<li onclick="showOnly('booking-step-3')">Auswahl</li>
 			<li onclick="showOnly('booking-step-4')">Bestätigung</li>
 		</ul>
-		<br>
-		
-		<label for="from">Von:</label>
-		<input type="text" id="from">
-		<br>
-
-		<label for="to">Nach:</label>
-		<input type="text" id="to">
-		<br>
-		<label for="date">Datum:</label>
-		<input type="date" id="datum">
-		<br>
-		<label for="time">Zeit:</label>
-		<input type="time" id="time">
-		<br>
-		<fieldset>
-			<legend>Ab An:</legend>
-			<label for="ab">Ab</label>
-			<input type="radio" name="aban" id="ab" value="ab" checked><br>
-			<label for="an">An</label>
-			<input type="radio" name="aban" id="an" value="an"><br>
-		</fieldset>
-		<fieldset>
-			<legend>Personen:</legend>
-			<button>+</button>
-			<input type="number" value="1">
-			<button>-</button>
-		</fieldset>		
-		<br>
-		<label for="rueckfahrt">Rückfahrt:</label>
-		<input type="checkbox" id="rueckfahrt">
-
-		<br>
-		<button onclick="showOnly('dashboard')">Abbrechen</button>
-		<button onclick="showOnly('booking-step-2')">Weiter</button>
+		<div class="grid" style="margin : 20px 20px 0 20px;">
+			<div class="grid_item">
+				<label for="from">Von:</label><br>
+				<input type="text" id="from">				
+			</div>
+			<div class="grid_item">
+				<label for="to">Nach:</label><br>
+				<input type="text" id="to">				
+			</div>
+		</div>
+		<div class="grid" style="margin : 20px 20px 0 20px;">
+			<div class="grid_item">
+				<label for="date">Datum:</label>
+				<input type="date" id="datum">
+			</div>
+			<div class="grid_item">
+				<label for="time">Zeit:</label>
+				<input type="time" id="time">	
+			</div>	
+			<div class="grid_item">
+				<fieldset>
+					<legend>Ab An:</legend>
+					<label for="ab">Ab</label>
+					<input type="radio" name="aban" id="ab" value="ab" checked><br>
+					<label for="an">An</label>
+					<input type="radio" name="aban" id="an" value="an"><br>
+				</fieldset>			
+			</div>		
+		</div>
+		<div class="grid" style="margin : 20px 20px 0 20px;">
+			<div class="grid_item">
+				<fieldset>
+					<legend>Personen:</legend>
+					<button>+</button>
+					<input type="number" value="1">
+					<button>-</button>
+				</fieldset>		
+			</div>
+		</div>
+		<div class="grid" style="margin : 20px 20px 0 20px;">
+			<div class="grid_item">
+				<label for="rueckfahrt">Rückfahrt:</label>
+				<input type="checkbox" id="rueckfahrt">
+			</div>
+		</div>
+		<div class="grid" style="margin : 20px 20px 0 20px;">
+			<div class="grid_item">
+				<button onclick="showOnly('dashboard')">Abbrechen</button>
+				<button onclick="showOnly('booking-step-2')">Weiter</button>
+			</div>
+		</div>
 	</section>
 	<section id="booking-step-2" class="screen">
 		<ul class="tabs">
@@ -349,9 +365,11 @@
 				Bestellen!
 			</button>
 		</div>
-
-		<br>
-		<button onclick="showOnly('booking-step-2')">Zurück</button>
+		<div class="grid" style="margin : 20px 20px 0 20px;">
+			<div class="grid_item">
+				<button onclick="showOnly('booking-step-2')">Zurück</button>
+			</div>
+		</div>
 	</section>
 	<section id="booking-step-4" class="screen">
 		<ul class="tabs">
@@ -372,8 +390,12 @@
 			<button class="booking-confirmation_edit" onclick="showOnly('booking-step-2')">edit</button>
 			Rückfahrt
 		</div>		
-		<button onclick="showOnly('booking-step-3')">Zurück</button>		
-		<button onclick="alert('Vielen Dank für Ihre Bestellung!');showOnly('dashboard')">Bestätigen</button>
+		<div class="grid" style="margin : 20px 20px 0 20px;">
+			<div class="grid_item">
+				<button onclick="showOnly('booking-step-3')">Zurück</button>		
+				<button onclick="alert('Vielen Dank für Ihre Bestellung!');showOnly('dashboard')">Bestätigen</button>
+			</div>
+		</div>
 	</section>
 	<section id="profile" class="screen">
 		<ul class="tabs">
@@ -415,7 +437,7 @@
 			Externe Anzeige <br>
 		</div>
 	</section>
-	
+
 
 
 	<section id="achivements" class="screen">Achievements<br>
