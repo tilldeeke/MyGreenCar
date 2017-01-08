@@ -60,7 +60,7 @@ function update() {
 }
 
 // request updates with a fixed interval (ms)
-var intervalID = setInterval(update, 20000);
+var intervalID = setInterval(update, 200);
 
 ///////////////////////////////////////////////////////////////////////////////
 // your code below
@@ -68,33 +68,8 @@ var intervalID = setInterval(update, 20000);
 var dbname = "hci1";
 var dburl = "http://127.0.0.1:5984/" + dbname + "/";
 var handlers = {
-	"animal" : updateAnimal,
-	"showCounter" : showCounter,
-	"counter" : updateCounter,
-	"mytext" : updateText,
 	// add further handlers here
 };
-
-function updateAnimal(response) {
-	document.getElementById(response._id).src = response.src;
-	document.getElementById(response._id).width = response.width;
-}
-
-function updateCounter(response) {
-	document.getElementById(response._id).innerHTML =
-		showCounter ? response.value : "";
-}
-
-var showCounter = true;
-
-function showCounter(response) {
-	showCounter = response.checked;
-}
-
-function updateText(response) {
-	document.getElementsById("mytext").innerHTML = response.value;
-}
-
 
 
 
