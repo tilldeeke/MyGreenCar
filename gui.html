@@ -144,11 +144,11 @@
 	<script>
 		$(document).ready(function() {
 
-			showOnly('booking-step-1');
+			showOnly('login');
 
 			hide('indicator-long');
 			hide('indicator-short');
-			show('indicator-arrived');
+			hide('indicator-arrived');
 		});
 		
 	</script>
@@ -332,7 +332,7 @@
 		<div class="grid" style="margin : 20px 20px 0 20px;">
 			<div class="grid_item">
 				<label for="date">Datum:</label>
-				<input type="date" id="datum">
+				<input type="date" id="date">
 			</div>
 			<div class="grid_item">
 				<label for="time">Zeit:</label>
@@ -352,22 +352,22 @@
 			<div class="grid_item">
 				<fieldset>
 					<legend>Personen:</legend>
-					<button>+</button>
-					<input type="number" value="1">
-					<button>-</button>
+					<button onclick="incNumber('#passengers')">+</button>
+					<input type="number" value="1" id="passengers">
+					<button onclick="decNumber('#passengers')">-</button>
 				</fieldset>		
 			</div>
 		</div>
 		<div class="grid" style="margin : 20px 20px 0 20px;">
 			<div class="grid_item">
 				<label for="rueckfahrt">Rückfahrt:</label>
-				<input type="checkbox" id="rueckfahrt">
+				<input type="checkbox" id="rueckfahrt" disabled>
 			</div>
 		</div>
 		<div class="grid" style="margin : 20px 20px 0 20px;">
 			<div class="grid_item">
 				<button onclick="showOnly('dashboard')">Abbrechen</button>
-				<button style="float: right" onclick="showOnly('booking-step-3')">Weiter</button>
+				<button style="float: right" onclick="submitBookingStep1()">Weiter</button>
 			</div>
 		</div>
 	</section>
@@ -391,29 +391,29 @@
 		<br>
 		<div class="booking-option grid">
 			<div class="booking-option_text grid_item">
-				Ab: XXXX <br>
-				An: XXXX <br>
-				Dauer: XXXX
+				Ab: <span class="js-ab">##</span> <br>
+				An: <span class="js-an">##</span> <br>
+				Dauer: <span class="js-duration">##</span>
 			</div>
 			<div class="booking-option_type grid_item">
 				Gruppenfahrt
 			</div>
 			<button class="booking-option_action grid_item" onclick="showOnly('booking-step-4')">
-				12,50€ <br>
+				<strong>12,50€</strong> <br>
 				Bestellen!
 			</button>
 		</div>
 		<div class="booking-option grid">
 			<div class="booking-option_text grid_item">
-				Ab: XXXX <br>
-				An: XXXX <br>
-				Dauer: XXXX
+				Ab: <span class="js-ab">##</span> <br>
+				An: <span class="js-an">##</span> <br>
+				Dauer: <span class="js-duration">##</span>
 			</div>
 			<div class="booking-option_type grid_item">
-				Gruppenfahrt
+				Einzelfahrt
 			</div>
 			<button class="booking-option_action grid_item" onclick="showOnly('booking-step-4')">
-				12,50€ <br>
+				21,99€ <br>
 				Bestellen!
 			</button>
 		</div>
@@ -433,8 +433,8 @@
 		<br>
 		<div class="booking-confirmation">
 			<button class="booking-confirmation_edit" onclick="showOnly('booking-step-1')">edit</button>
-			Hinfahrt: Standort -> Eingabe <br>
-			XXXX ab XXXX <br>
+			Hinfahrt: <span class="js-from">###</span> -> <span class="js-to">###</span> <br>
+			<span class="js-date">###</span> ab <span class="js-ab">###</span> Uhr<br>
 			Gruppenfahrt <br>
 			Preis: 12,50€ <br>
 		</div>
@@ -445,7 +445,7 @@
 		<div class="grid" style="margin : 20px 20px 0 20px;">
 			<div class="grid_item">
 				<button onclick="showOnly('booking-step-3')">Zurück</button>		
-				<button style="float:right" onclick="alert('Vielen Dank für Ihre Bestellung!');showOnly('dashboard')">Bestätigen</button>
+				<button style="float:right" onclick="submitBookingStep4()">Bestätigen</button>
 			</div>
 		</div>
 	</section>
@@ -556,13 +556,13 @@
 		</div>
 
 	</section>
-
+	<!--
 	<h1>GUI</h1>
 
 	<div id="counter"></div>
 	<div id="mytext"></div>
 
 	<img src="cat.jpg" width="300" id="animal" />
-
+-->
 </body>
 </html>

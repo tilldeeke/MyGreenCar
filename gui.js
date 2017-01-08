@@ -111,3 +111,74 @@ function hide(screen) {
 function show(screen) {
 	document.getElementById(screen).style.display = 'block';
 }
+
+function replaceContent(identifier, content) {
+	console.log(identifier);
+	console.log(content);
+
+	$(identifier).html(content);
+}
+
+function incNumber(element) {
+	$(element).val(parseInt($(element).val()) + 1);
+}
+function decNumber(element) {
+	$(element).val(parseInt($(element).val()) - 1);
+}
+
+
+function submitBookingStep1() {
+
+	replaceContent('.js-from', $('#from').val());
+	replaceContent('.js-to', $('#to').val());
+	replaceContent('.js-date', $('#date').val());
+	replaceContent('.js-time', $('#time').val());
+
+
+	// AB is checked
+	if ($("#ab").is(':checked')) {
+		replaceContent('.js-ab', $('#time').val());
+
+		var theTimeArr =  $('#time').val().split(":");
+		var theTime = parseInt(theTimeArr[0]);
+		theTime += 2;
+
+		replaceContent('.js-an', theTime + ':' + theTimeArr[1]);
+
+	} else {
+		replaceContent('.js-an', $('#time').val());
+
+		var theTimeArr =  $('#time').val().split(":");
+		var theTime = parseInt(theTimeArr[0]);
+		theTime -= 2;
+
+		replaceContent('.js-ab', theTime + ':' + theTimeArr[1]);
+	} 
+
+	replaceContent('.js-duration', Math.abs(theTime - theTimeArr[0]) + ' Stunden');
+
+	showOnly('booking-step-3');
+}
+
+function submitBookingStep4() {
+	alert('Vielen Dank für Ihre Bestellung!');
+
+	show('indicator-long');
+	hide('indicator-short');
+	hide('indicator-arrived');
+
+	// cycle through indicators
+	setTimeout(function() {
+		hide('indicator-long');
+		show('indicator-short');
+	}, 3000);	
+	setTimeout(function() {
+		hide('indicator-short');
+		show('indicator-arrived');
+	}, 6000);
+	setTimeout(function() {
+		hide('indicator-arrived');
+	}, 9000);
+
+	showOnly('dashboard')	
+}
