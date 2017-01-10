@@ -119,6 +119,7 @@
 			margin : 20px;
 			border : 1px solid #ccc;
 			position : relative;
+			min-height : 45px;
 		}
 		.booking-confirmation_edit {
 			position: absolute;
@@ -139,6 +140,10 @@
 		}		
 		#favorites tbody td, #routines tbody td {
 			border : 1px solid #aaa;
+		}
+
+		input, button {
+			padding : 10px;
 		}
 	</style>
 	<script>
@@ -178,9 +183,9 @@
 		<div class="grid">
 			<div class="grid_item" style="padding : 25px 0 0 25px">
 				<label for="email">Email:</label><br>
-				<input type="email"><br>
+				<input type="email"><br><br>
 				<label for="password">Passwort:</label><br>
-				<input type="password"><br>
+				<input type="password"><br><br>
 				<button id="submit-login" onclick="showOnly('dashboard')">Login</button>
 				<p>
 					<a href="#">Registrieren</a><br>
@@ -322,20 +327,28 @@
 		<div class="grid" style="margin : 20px 20px 0 20px;">
 			<div class="grid_item">
 				<label for="from">Von:</label><br>
-				<input type="text" id="from">				
+				<input type="text" id="from" list="locations">
+				<button onclick="$('#from').val('Aktueller Standort')"><i class="fa fa-map-marker"></i></button>				
 			</div>
 			<div class="grid_item">
 				<label for="to">Nach:</label><br>
-				<input type="text" id="to">				
+				<input type="text" id="to" list="locations">				
 			</div>
+			<datalist id="locations">
+				<option value="Hannnover Hauptbahnhof">
+				<option value="Hannover, Leibniz Universität">
+				<option value="Hannover, Welfengarten 1">
+				<option value="Hannover, Königsworther Platz 1">
+				<option value="Hannover, Schulenburger Landstraße 145">
+			</datalist>
 		</div>
 		<div class="grid" style="margin : 20px 20px 0 20px;">
 			<div class="grid_item">
-				<label for="date">Datum:</label>
+				<label for="date">Datum:</label><br>
 				<input type="date" id="date">
 			</div>
 			<div class="grid_item">
-				<label for="time">Zeit:</label>
+				<label for="time">Zeit:</label><br>
 				<input type="time" id="time">	
 			</div>	
 			<div class="grid_item">
