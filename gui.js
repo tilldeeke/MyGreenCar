@@ -136,7 +136,7 @@ function submitBookingStep1() {
 }
 
 function submitBookingStep4() {
-	alert('Vielen Dank für Ihre Bestellung!');
+	alert('Vielen Dank für Ihre Bestellung! Bitte warten Sie rechtzeitig an der Station auf Ihren Wagen! ');
 
 	show('indicator-long');
 	hide('indicator-short');

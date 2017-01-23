@@ -71,7 +71,7 @@
 
 		#dashboard .grid_item {
 			height: 200px;
-			border : 1px solid red;
+			border : 1px solid blue;
 		}
 		#dashboard .grid_item button {
 			width : 100%;
@@ -113,6 +113,7 @@
 			cursor: pointer;
 
 		}
+		
 
 		.booking-confirmation {
 			padding : 10px;
@@ -161,12 +162,19 @@
 <body>
 	<div id="top-bar">
 		<div class="top-bar_item">
-			<button id="menu-btn" onclick="showOnly('menu')">Menü</button>	
+			<div class="grid">
+				<div class="grid_item">
+					<button id="menu-btn" onclick="showOnly('menu')">Menü</button>	
+				</div>
+				<div class="grid_item">
+					<div style="color:black;font-size:100%" > Ihre nächste Abfahrt: </div>
+				</div>
+			</div>
 		</div>
-		<div id="car-indicator" class="top-bar_item">
-			<div id="indicator-long">~ 10 Minuten</div>
-			<div id="indicator-short">< 3 Minuten</div>
-			<div id="indicator-arrived">Ihr Auto ist da!</div>
+		<div id="car-indicator" class="top-bar_item" >
+			<div style="color:red;font-size:large" id="indicator-long">~ 10 Minuten</div>
+			<div style="color:red;font-size:large" id="indicator-short">< 3 Minuten</div>
+			<div style="color:red;font-size:large" id="indicator-arrived">Ihr Auto ist da!</div>
 		</div>	
 		<div id="date-time" class="top-bar_item">15:00 Uhr &ndash; 10.10.2017</div>
 	</div>
