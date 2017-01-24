@@ -12,7 +12,7 @@
 		.screen {
 			width:800px;
 			height:600px;
-			border: 1px solid blue;
+			border: 3px solid green;
 		}
 		ul.tabs {
 			display:flex;
@@ -22,34 +22,36 @@
 		}
 		ul.tabs > li {
 			flex: 1;
-			background : grey;
+			background : #d3ddcf;
 			padding : 15px;
 			margin : 0;
 			border : 1px solid #333;
 			text-align: center;
 		}
 		ul.tabs > li.active {
-			background : green;
+			background : #8bff5d;
 		}
 
 		#top-bar {
 			display: flex;
 			width : 800px;
-			border: 1px solid blue;
+			border: 3px solid green;
 			border-bottom-width: 0;
 		}
 		.top-bar_item {
 			flex: 1;
-			border-right: 1px solid blue;		
+			border-right: 3px solid green;		
 		}
 		.top-bar_item:last-child {
 			border-right-width: 0;
 		}
 		#menu-btn {
 			padding : 10px;
+			background-color : #8bff5d;
 		}
 		#car-indicator {
 			text-align : center;
+			background-color : #d3ddcf
 		}
 		
 		
@@ -71,7 +73,7 @@
 
 		#dashboard .grid_item {
 			height: 200px;
-			border : 1px solid blue;
+			border : 1px solid green;
 		}
 		#dashboard .grid_item button {
 			width : 100%;
@@ -105,13 +107,47 @@
 			margin: 0;
 			width : 300px;
 			height : 100%;
-			border-right : 1px solid #ccc;
+			border-right : 3px solid #ccc;
 		}
 		.menu li {
-			border-bottom : 1px solid #ccc; 
+			border-bottom : 3px solid #ccc; 
 			padding : 20px;
 			cursor: pointer;
 
+		}
+		
+		.arrival_time {
+			color:green;
+			font-size:normal; 
+			font-weight : bold; 
+			padding : 5px;
+		}
+		
+		
+		#menu_text {
+			color:black;
+			font-size:normal; 
+			text-align: right; 
+			padding : 5px; 
+		}
+		
+		#date-time {
+			color:black;
+			font-size: normal; 
+			text-align: center; 
+			padding : 5px; 
+		}
+		
+		#submit-login {
+			border: 1px solid green; 
+			background-color: #8bff5d; 
+		}
+		
+		.grid_border {
+			border-left : solid;
+			margin : 20px;
+			padding : 20px;
+			border-color : #8bff5d;
 		}
 		
 
@@ -167,14 +203,14 @@
 					<button id="menu-btn" onclick="showOnly('menu')">Menü</button>	
 				</div>
 				<div class="grid_item">
-					<div style="color:black;font-size:100%" > Ihre nächste Abfahrt: </div>
+					<div id="menu_text" > Abfahrt </div>
 				</div>
 			</div>
 		</div>
 		<div id="car-indicator" class="top-bar_item" >
-			<div style="color:red;font-size:large" id="indicator-long">~ 10 Minuten</div>
-			<div style="color:red;font-size:large" id="indicator-short">< 3 Minuten</div>
-			<div style="color:red;font-size:large" id="indicator-arrived">Ihr Auto ist da!</div>
+			<div class="arrival_time" id="indicator-long">~ 10 Minuten</div>
+			<div class="arrival_time" id="indicator-short">< 3 Minuten</div>
+			<div class="arrival_time" id="indicator-arrived">Ihr Auto ist da!</div>
 		</div>	
 		<div id="date-time" class="top-bar_item">15:00 Uhr &ndash; 10.10.2017</div>
 	</div>
@@ -190,9 +226,9 @@
 	<section id="login" class="screen">
 		<div class="grid">
 			<div class="grid_item" style="padding : 25px 0 0 25px">
-				<label for="email">Email:</label><br>
+				<label for="email">E-Mail</label><br>
 				<input type="email"><br><br>
-				<label for="password">Passwort:</label><br>
+				<label for="password">Passwort</label><br>
 				<input type="password"><br><br>
 				<button id="submit-login" onclick="showOnly('dashboard')">Login</button>
 				<p>
@@ -201,25 +237,26 @@
 				</p>
 			</div>
 			<div class="grid_item" style="text-align : center">
-				<i class="fa fa-car" style="font-size: 180px;margin-top : 50px;margin-right: 50px;color :green"></i>
+				<i class="fa fa-car" style="font-size: 180px;margin-top : 50px;margin-right: 50px;color :#8bff5d"></i>
+				<h1 style="color : green;text-align : left; float : left;">Meine Art: Einfach, umweltfreundlich und flexibel.</h1>
 			</div>
 		</div>
 	</section>
 	<section id="dashboard" class="screen">
 		<div class="grid">
 			<div class="grid_item">
-				<button onclick="showOnly('booking-step-1')">Buchen <br><br><i class="fa fa-car" aria-hidden="true"></i></button>
+				<button style = "background-color : #8bff5d" onclick="showOnly('booking-step-1')">Buchen <br><br><i class="fa fa-car" aria-hidden="true"></i></button>
 			</div>
 			<div class="grid_item">
-				<button onclick="showOnly('favorites')">Favoriten <br><br><i class="fa fa-arrows" aria-hidden="true"></i></button>
+				<button style = "background-color : #8bff5d" onclick="showOnly('favorites')">Favoriten <br><br><i class="fa fa-arrows" aria-hidden="true"></i></button>
 			</div>
 		</div>
 		<div class="grid">
 			<div class="grid_item">
-				<button onclick="showOnly('profile')">Profil <br><br><i class="fa fa-user" aria-hidden="true"></i></i></button>
+				<button style = "background-color : #8bff5d" onclick="showOnly('profile')">Profil <br><br><i class="fa fa-user" aria-hidden="true"></i></i></button>
 			</div>
 			<div class="grid_item">
-				<button onclick="showOnly('achivements')">Achievements <br><br><i class="fa fa-trophy" aria-hidden="true"></i></button>
+				<button style = "background-color : #8bff5d" onclick="showOnly('achivements')">Achievements <br><br><i class="fa fa-trophy" aria-hidden="true"></i></button>
 			</div>
 		</div>
 		
@@ -466,7 +503,7 @@
 		<div class="grid" style="margin : 20px 20px 0 20px;">
 			<div class="grid_item">
 				<button onclick="showOnly('booking-step-3')">Zurück</button>		
-				<button style="float:right" onclick="submitBookingStep4()">Bestätigen</button>
+				<button style="float:right; background-color:#8bff5d; border : 1px solid green" onclick="submitBookingStep4()">Bestätigen</button>
 			</div>
 		</div>
 	</section>
@@ -476,7 +513,7 @@
 			<li onclick="showOnly('settings')">Einstellungen</li>
 		</ul>
 		<br> 
-		<div style="padding: 10px">
+		<div style="padding: 10px; font-weight:bold">
 			Peter Schmidt <br>
 		</div>
 		<br>
@@ -528,51 +565,65 @@
 
 
 
-	<section id="achivements" class="screen" style="padding : 10px">Achievements<br>
+	<section id="achivements" class="screen"> 
+		<ul class="tabs">
+			<li class="active" >Achievements</li>
+		</ul>
 		<br>
 		<div class="grid">
 			<div class="grid_item">
-				Abgasvermeider  Level 4 <br>
-				20 Tonnen CO2 eingespart <br>
-				<div class = "achiev_pics_box">
-					<i class="fa fa-fire" aria-hidden="true"></i>
+				<div class="grid_border">
+					Abgasvermeider  Level 4 <br>
+					20 Tonnen CO2 eingespart <br>
+					<div class = "achiev_pics_box">
+						<i class="fa fa-fire" aria-hidden="true"></i>
+					</div>
+					<progress value="20" max="100">
+					</progress>
+					<br>
 				</div>
-				<progress value="20" max="100">
-				</progress>
-				<br>
 			</div>
 			<div class="grid_item">
-				Baumkuschler  Level 2 <br>
-				26 Bäume gerettet <br>
-				<div class = "achiev_pics_box">
-					<i class="fa fa-tree" aria-hidden="true" ></i> 
-				</div>			
-				<progress value="80" max="100">
-				</progress>
-				<br>
+				<div class="grid_border">
+					Baumkuschler  Level 2 <br>
+					26 Bäume gerettet <br>
+					<div class = "achiev_pics_box">
+						<i class="fa fa-tree" aria-hidden="true" ></i> 
+					</div>			
+					<progress value="80" max="100">
+					</progress>
+					<br>
+				</div>
 			</div>
 		</div>
 		<br>
+		<br>
+		<br>
+		<br>
 		<div class="grid">
 			<div class="grid_item">
-				Gemeinsam stark  Level 6 <br>
-				200 Gruppenfahrten <br>
-				<div class = "achiev_pics_box">
-					<i class="fa fa-users" aria-hidden="true" ></i>
-				</div> 				
-				<progress value="45" max="100">
-				</progress>
-				<br>
+				<div class="grid_border">
+					Gemeinsam stark  Level 6 <br>
+					200 Gruppenfahrten <br>
+					<div class = "achiev_pics_box">
+						<i class="fa fa-users" aria-hidden="true" ></i>
+					</div> 				
+					<progress value="45" max="100">
+					</progress>
+					<br>
+				</div>
 			</div>
 			<div class="grid_item">
-				Tierfreund  Level 10 <br>
-				33 süße Kätzchen gerettet <br>
-				<div class = "achiev_pics_box">
-					<i class="fa fa-github-alt" aria-hidden="true"></i> 
-				</div>			
-				<progress value="95" max="100">
-				</progress>
-				<br>
+				<div class="grid_border">
+					Tierfreund  Level 10 <br>
+					33 süße Kätzchen gerettet <br>
+					<div class = "achiev_pics_box">
+						<i class="fa fa-github-alt" aria-hidden="true"></i> 
+					</div>			
+					<progress value="95" max="100">
+					</progress>
+					<br>
+				</div>
 			</div>
 		</div>
 
